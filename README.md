@@ -1,10 +1,9 @@
 # portscanner
 
-A lightweight TCP port scanner written in Go, built on the red-team tool framework: **Target → Communicate → Evade → Results**.
+A lightweight TCP port scanner written in Go, built on the  tool framework: **Target → Communicate → Evade → Results**.
 
-No dependencies. Single binary. Drop it anywhere.
+No dependencies.
 
----
 
 ## Features
 
@@ -16,7 +15,6 @@ No dependencies. Single binary. Drop it anywhere.
 - Concurrent workers for fast sweeps
 - Clean sorted output with elapsed time
 
----
 
 ## Build
 
@@ -38,7 +36,6 @@ GOOS=linux GOARCH=amd64 go build -o portscanner portscanner.go
 GOOS=windows GOARCH=amd64 go build -o portscanner.exe portscanner.go
 ```
 
----
 
 ## Usage
 
@@ -55,7 +52,7 @@ Flags:
   -banner         grab service banners after connecting (LOUD — off by default)
 ```
 
----
+
 
 ## Examples
 
@@ -79,7 +76,7 @@ Flags:
 ./portscanner -p 1-65535 -c 100 -timeout 1s 10.0.0.5
 ```
 
----
+
 
 ## Sample Output
 
@@ -102,7 +99,6 @@ With `-banner`:
 [+]   443/tcp  OPEN   HTTP/1.1 200 OK        nginx/1.24.0
 ```
 
----
 
 This tool is structured around a 4-step build pattern for offensive security tools:
 
@@ -113,7 +109,6 @@ This tool is structured around a 4-step build pattern for offensive security too
 | **Evade** | Shuffle ports, jitter timing, TLS on TLS ports, quiet by default | `scan()`, `-stealth` flag |
 | **Results** | Sorted, clean output with counts and elapsed time | `main()` output block |
 
----
 
 ## Limitations
 
@@ -126,13 +121,12 @@ This is a **TCP connect scanner** — it completes the full three-way handshake.
 
 For full stealth, a SYN scan (raw sockets + root) is the next step.
 
----
 
 ## Legal
 
 Only scan hosts you own or have **explicit written authorisation** to test. Unauthorised port scanning may be illegal in your jurisdiction.
 
----
+
 
 ## Author
 
